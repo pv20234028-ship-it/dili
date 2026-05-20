@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中國地理學習網站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-globe-asia"></i>
+                <span>中國地理學習網</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#chapters" class="nav-link active"><i class="fas fa-book-open"></i> 章節精講</a></li>
+                <li><a href="#map-interactive" class="nav-link"><i class="fas fa-map-marked-alt"></i> 地圖互動</a></li>
+                <li><a href="#cards" class="nav-link"><i class="fas fa-layer-group"></i> 名詞卡片</a></li>
+                <li><a href="#quiz" class="nav-link"><i class="fas fa-pen-fancy"></i> 題庫練習</a></li>
+                <li><a href="#hktw" class="nav-link"><i class="fas fa-handshake"></i> 港澳臺專區</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄橫幅 -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">探索中國地理</h1>
+            <p class="hero-subtitle">從山川湖海到人文風情，系統化學習中國地理知識</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="34">0</span>
+                    <span class="stat-label">省級行政區</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">地形階梯</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="960">0</span>
+                    <span class="stat-label">萬 km² 國土</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="56">0</span>
+                    <span class="stat-label">民族</span>
+                </div>
+            </div>
+            <a href="#chapters" class="hero-btn">開始學習 <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <!-- 第一區塊：章節精講 -->
+    <section class="section" id="chapters">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-book-open"></i> 章節精講</h2>
+                <p class="section-desc">系統化學習中國自然地理、人文地理與區域地理</p>
+            </div>
+            <div class="tab-nav" data-tab-group="chapters">
+                <button class="tab-btn active" data-tab="natural">自然地理</button>
+                <button class="tab-btn" data-tab="human">人文地理</button>
+                <button class="tab-btn" data-tab="regional">區域地理</button>
+                <button class="tab-btn" data-tab="hktw-chapter">港澳臺</button>
+            </div>
+            <div class="tab-content" id="chaptersContent">
+                <!-- 自然地理 -->
+                <div class="tab-panel active" data-panel="natural">
+                    <div class="chapter-grid">
+                        <div class="chapter-card" data-chapter="terrain">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #4a6741, #7da276);">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h3>地形與地勢</h3>
+                            <p>三級階梯、四大高原、四大盆地、三大平原與主要山脈</p>
+                            <ul class="chapter-highlights">
+                                <li>西高東低的三級階梯</li>
+                                <li>青藏高原—「世界屋脊」</li>
+                                <li>天山、崑崙山、秦嶺等重要分界線</li>
+                                <li>盆地與平原的分布規律</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('terrain')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('terrain')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="climate">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #c17817, #e8a948);">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <h3>氣候特徵</h3>
+                            <p>季風氣候顯著、氣溫分佈規律、降水時空分佈與氣候類型</p>
+                            <ul class="chapter-highlights">
+                                <li>冬冷夏熱的大陸性季風</li>
+                                <li>秦嶺—淮河一線的意義</li>
+                                <li>溫度帶與乾濕地區</li>
+                                <li>氣候對農業的影響</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('climate')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('climate')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="hydrology">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #1a6b8a, #4db8d6);">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3>河流與湖泊</h3>
+                            <p>外流區與內流區、長江黃河珠江、主要湖泊與水資源</p>
+                            <ul class="chapter-highlights">
+                                <li>長江—中國第一長河</li>
+                                <li>黃河—「母親河」</li>
+                                <li>內流河與外流河的區別</li>
+                                <li>鄱陽湖、洞庭湖等淡水湖</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('hydrology')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('hydrology')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 人文地理 -->
+                <div class="tab-panel" data-panel="human">
+                    <div class="chapter-grid">
+                        <div class="chapter-card" data-chapter="population">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #8e44ad, #c39bd3);">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>人口與民族</h3>
+                            <p>人口分佈特點、人口遷移、民族分佈與人口政策</p>
+                            <ul class="chapter-highlights">
+                                <li>黑河—騰衝線（胡煥庸線）</li>
+                                <li>東密西疏的人口格局</li>
+                                <li>少數民族分佈特點：大散居、小聚居</li>
+                                <li>人口老齡化與城鎮化</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('population')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('population')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="agriculture">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #27ae60, #7dcea0);">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3>農業與糧食</h3>
+                            <p>農業分佈、南北農業差異、主要農產品與糧食安全</p>
+                            <ul class="chapter-highlights">
+                                <li>南稻北麥的格局</li>
+                                <li>三大平原的農業特色</li>
+                                <li>畜牧業與漁業分佈</li>
+                                <li>耕地面積與糧食安全</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('agriculture')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('agriculture')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="industry">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #2c3e50, #7f8c8d);">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>工業與交通</h3>
+                            <p>工業基地、交通網絡、資源分佈與經濟發展</p>
+                            <ul class="chapter-highlights">
+                                <li>四大工業基地</li>
+                                <li>鐵路幹線「五縱三橫」</li>
+                                <li>煤炭、石油、天然氣分佈</li>
+                                <li>一帶一路與區域發展</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('industry')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('industry')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 區域地理 -->
+                <div class="tab-panel" data-panel="regional">
+                    <div class="region-grid">
+                        <div class="region-card" data-region="northeast" onclick="openRegionModal('northeast')">
+                            <div class="region-badge" style="background:#2980b9;">北</div>
+                            <h4>東北地區</h4>
+                            <p>黑龍江、吉林、遼寧</p>
+                            <span class="region-tag">黑土地·老工業基地</span>
+                        </div>
+                        <div class="region-card" data-region="north" onclick="openRegionModal('north')">
+                            <div class="region-badge" style="background:#e67e22;">華</div>
+                            <h4>華北地區</h4>
+                            <p>北京、天津、河北、山西、內蒙古</p>
+                            <span class="region-tag">黃土高原·京津冀</span>
+                        </div>
+                        <div class="region-card" data-region="east" onclick="openRegionModal('east')">
+                            <div class="region-badge" style="background:#27ae60;">東</div>
+                            <h4>華東地區</h4>
+                            <p>上海、江蘇、浙江、安徽、福建、江西、山東</p>
+                            <span class="region-tag">長三角·魚米之鄉</span>
+                        </div>
+                        <div class="region-card" data-region="central" onclick="openRegionModal('central')">
+                            <div class="region-badge" style="background:#8e44ad;">中</div>
+                            <h4>華中地區</h4>
+                            <p>河南、湖北、湖南</p>
+                            <span class="region-tag">中原腹地·九省通衢</span>
+                        </div>
+                        <div class="region-card" data-region="south" onclick="openRegionModal('south')">
+                            <div class="region-badge" style="background:#e74c3c;">南</div>
+                            <h4>華南地區</h4>
+                            <p>廣東、廣西、海南</p>
+                            <span class="region-tag">嶺南·珠三角</span>
+                        </div>
+                        <div class="region-card" data-region="southwest" onclick="openRegionModal('southwest')">
+                            <div class="region-badge" style="background:#16a085;">西</div>
+                            <h4>西南地區</h4>
+                            <p>重慶、四川、貴州、雲南、西藏</p>
+                            <span class="region-tag">天府之國·雪域高原</span>
+                        </div>
+                        <div class="region-card" data-region="northwest" onclick="openRegionModal('northwest')">
+                            <div class="region-badge" style="background:#d35400;">西</div>
+                            <h4>西北地區</h4>
+                            <p>陝西、甘肅、青海、寧夏、新疆</p>
+                            <span class="region-tag">絲路·大漠綠洲</span>
+                        </div>
+                        <div class="region-card" data-region="qinghai-tibet" onclick="openRegionModal('qinghai-tibet')">
+                            <div class="region-badge" style="background:#7f8c8d;">極</div>
+                            <h4>青藏地區</h4>
+                            <p>青海、西藏</p>
+                            <span class="region-tag">世界屋脊·三江源</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 港澳臺章節 -->
+                <div class="tab-panel" data-panel="hktw-chapter">
+                    <div class="chapter-grid">
+                        <div class="chapter-card" data-chapter="hongkong">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #e74c3c, #f39c12);">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <h3>香港特別行政區</h3>
+                            <p>地理位置、經濟特色、與內地聯繫</p>
+                            <ul class="chapter-highlights">
+                                <li>珠江口東側的國際金融中心</li>
+                                <li>轉口貿易與服務業</li>
+                                <li>粵港澳大灣區融合</li>
+                                <li>「一國兩制」下的地理特色</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('hongkong')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('hongkong')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="macau">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h3>澳門特別行政區</h3>
+                            <p>填海造地、旅遊博彩、文化遺產</p>
+                            <ul class="chapter-highlights">
+                                <li>珠江口西側的微型經濟體</li>
+                                <li>填海造地擴大陸地面積</li>
+                                <li>世界旅遊休閒中心</li>
+                                <li>中西文化交融的歷史城區</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('macau')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('macau')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                        <div class="chapter-card" data-chapter="taiwan">
+                            <div class="chapter-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">
+                                <i class="fas fa-island-tropical"></i>
+                            </div>
+                            <h3>臺灣地區</h3>
+                            <p>島嶼地形、氣候特徵、資源與經濟</p>
+                            <ul class="chapter-highlights">
+                                <li>臺灣海峽與太平洋</li>
+                                <li>中央山脈縱貫南北</li>
+                                <li>亞熱帶與熱帶季風氣候</li>
+                                <li>與大陸的地理淵源</li>
+                            </ul>
+                            <div class="chapter-btn-group">
+                                <button class="btn-outline" onclick="loadChapter('taiwan')">深入學習</button>
+                                <button class="btn-sm btn-practice" onclick="openChapterQuiz('taiwan')"><i class="fas fa-pen"></i> 小練習</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 區域詳情 Modal -->
+    <div class="modal-overlay" id="regionModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeRegionModal()">&times;</button>
+            <div class="modal-header" id="modalHeader">
+                <h3 id="modalTitle">區域名稱</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二區塊：地圖互動 -->
+    <section class="section section-alt" id="map-interactive">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> 地圖互動學習</h2>
+                <p class="section-desc">透過互動地圖，直觀理解中國地理空間分佈</p>
+            </div>
+            <div class="tab-nav" data-tab-group="map">
+                <button class="tab-btn active" data-tab="fill-blank">空白填圖</button>
+                
+                <button class="tab-btn" data-tab="layer-compare">疊圖對比</button>
+                <button class="tab-btn" data-tab="hotspot">熱區點擊</button>
+            </div>
+            <div class="tab-content" id="mapContent">
+                <!-- 空白填圖 -->
+                <div class="tab-panel active" data-panel="fill-blank">
+                    <div class="map-workspace">
+                        <div class="map-area">
+                            <div class="map-controls">
+                                <select id="fillCategory" onchange="changeFillCategory(this.value)">
+                                    <option value="mountains">主要山脈</option>
+                                    <option value="rivers">主要河流</option>
+                                    
+                                    <option value="plateaus">高原與盆地</option>
+                                </select>
+                                <button class="btn-sm" onclick="resetFillMap()"><i class="fas fa-redo"></i> 重置</button>
+                                <button class="btn-sm" onclick="checkFillAnswers()"><i class="fas fa-check"></i> 檢查答案</button>
+                            </div>
+                            <div class="leaflet-map-container" id="fillMapContainer">
+                            </div>
+                        </div>
+                        <div class="word-bank" id="wordBank">
+                            <h4><i class="fas fa-hand-pointer"></i> 詞彙庫</h4>
+                            <p class="word-bank-hint">點擊詞彙，再點擊地圖上的標記放置</p>
+                            <div class="word-items" id="wordItems">
+                            </div>
+                            <div class="fill-score" id="fillScore">
+                                <span>正確：<strong id="correctCount">0</strong></span>
+                                <span>錯誤：<strong id="wrongCount">0</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 疊圖對比 -->
+                <div class="tab-panel" data-panel="layer-compare">
+                    <div class="map-workspace">
+                        <div class="map-area">
+                            <div class="map-controls">
+                                <label>選擇圖層：</label>
+                                <select id="layerSelect" onchange="changeLayer(this.value)">
+                                    <option value="terrain">地形圖</option>
+                                    <option value="temperature">氣溫帶分佈</option>
+                                    <option value="precipitation">降水量分佈</option>
+                                    <option value="population">人口密度</option>
+                                </select>
+                                <label>透明度：</label>
+                                <input type="range" id="layerOpacity" min="0" max="100" value="70" oninput="updateLayerOpacity(this.value)">
+                                <span id="opacityValue">70%</span>
+                            </div>
+                            <div class="leaflet-map-container" id="layerMapContainer">
+                            </div>
+                        </div>
+                        <div class="layer-legend" id="layerLegend">
+                            <h4><i class="fas fa-palette"></i> 圖例</h4>
+                            <div id="legendContent"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 熱區點擊 -->
+                <div class="tab-panel" data-panel="hotspot">
+                    <div class="map-workspace">
+                        <div class="map-area">
+                            <div class="map-controls">
+                                <input type="text" id="provinceSearch" placeholder="搜尋省份..." oninput="searchProvince(this.value)">
+                            </div>
+                            <div class="leaflet-map-container" id="hotspotMapContainer">
+                            </div>
+                        </div>
+                        <div class="province-info" id="provinceInfo">
+                            <h4><i class="fas fa-info-circle"></i> 省份資訊</h4>
+                            <div id="provinceDetail" class="province-detail">
+                                <p class="placeholder-text">點擊地圖上的省份查看詳細資訊</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三區塊：名詞卡片 -->
+    <section class="section" id="cards">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-layer-group"></i> 名詞與數據卡片</h2>
+                <p class="section-desc">記憶中國地理核心概念、易混淆詞彙與傳統口訣</p>
+            </div>
+            <div class="tab-nav" data-tab-group="cards">
+                <button class="tab-btn active" data-tab="geo-most">地理之最</button>
+                <button class="tab-btn" data-tab="confused">易混淆對比</button>
+                <button class="tab-btn" data-tab="mnemonics">口訣記憶</button>
+            </div>
+            <div class="tab-content" id="cardsContent">
+                <!-- 地理之最 -->
+                <div class="tab-panel active" data-panel="geo-most">
+                    <div class="cards-filter">
+                        <button class="filter-btn active" data-filter="all">全部</button>
+                        <button class="filter-btn" data-filter="terrain">地形</button>
+                        <button class="filter-btn" data-filter="water">水文</button>
+                        <button class="filter-btn" data-filter="climate">氣候</button>
+                        <button class="filter-btn" data-filter="human">人文</button>
+                    </div>
+                    <div class="flip-cards-grid" id="geoMostCards">
+                    </div>
+                </div>
+                <!-- 易混淆對比 -->
+                <div class="tab-panel" data-panel="confused">
+                    <div class="vs-cards-grid" id="confusedCards">
+                    </div>
+                </div>
+                <!-- 口訣記憶 -->
+                <div class="tab-panel" data-panel="mnemonics">
+                    <div class="phonetic-toggle">
+                        <label>注音模式：</label>
+                        <button class="toggle-btn active" data-mode="zhuyin" onclick="setPhoneticMode('zhuyin')">注音</button>
+                        <button class="toggle-btn" data-mode="pinyin" onclick="setPhoneticMode('pinyin')">拼音</button>
+                    </div>
+                    <div class="mnemonics-grid" id="mnemonicsCards">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四區塊：題庫練習 -->
+    <section class="section section-alt" id="quiz">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-pen-fancy"></i> 題庫練習</h2>
+                <p class="section-desc">檢驗學習成果，強化記憶與理解</p>
+            </div>
+            <div class="quiz-dashboard">
+                <div class="quiz-controls">
+                    <div class="quiz-filter-group">
+                        <label>題型：</label>
+                        <select id="quizType">
+                            <option value="all">全部題型</option>
+                            <option value="single">單選題</option>
+                            <option value="multi">多選題</option>
+                            <option value="fill">填空題</option>
+                            <option value="truefalse">判斷題</option>
+                            <option value="shortanswer">簡答題</option>
+                            <option value="comprehensive">綜合題</option>
+                        </select>
+                    </div>
+                    <div class="quiz-filter-group">
+                        <label>難度：</label>
+                        <select id="quizDifficulty">
+                            <option value="all">全部難度</option>
+                            <option value="easy">基礎</option>
+                            <option value="medium">進階</option>
+                            <option value="hard">挑戰</option>
+                        </select>
+                    </div>
+                    <div class="quiz-filter-group">
+                        <label>章節：</label>
+                        <select id="quizChapter">
+                            <option value="all">全部章節</option>
+                            <option value="terrain">地形與地勢</option>
+                            <option value="climate">氣候特徵</option>
+                            <option value="hydrology">河流與湖泊</option>
+                            <option value="population">人口與民族</option>
+                            <option value="agriculture">農業與糧食</option>
+                            <option value="industry">工業與交通</option>
+                            <option value="regional">區域地理</option>
+                            <option value="hktw">港澳臺專題</option>
+                            <option value="comprehensive">跨章節綜合</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" onclick="startQuiz()"><i class="fas fa-play"></i> 開始答題</button>
+                    <button class="btn-outline" onclick="openWrongBook()"><i class="fas fa-book"></i> 錯題本</button>
+                </div>
+                <div class="quiz-progress-bar">
+                    <div class="progress-fill" id="quizProgressFill" style="width: 0%"></div>
+                    <span class="progress-text" id="quizProgressText">0 / 0</span>
+                </div>
+            </div>
+            <div class="quiz-area" id="quizArea">
+                <div class="quiz-placeholder">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>選擇條件後點擊「開始答題」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 錯題本 Modal -->
+    <div class="modal-overlay" id="wrongBookModal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close" onclick="closeWrongBook()">&times;</button>
+            <div class="modal-header">
+                <h3><i class="fas fa-book"></i> 錯題本</h3>
+                <button class="btn-sm" onclick="clearWrongBook()"><i class="fas fa-trash"></i> 清空錯題</button>
+            </div>
+            <div class="modal-body" id="wrongBookBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- 第五區塊：港澳臺視角專區 -->
+    <section class="section" id="hktw">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><i class="fas fa-handshake"></i> 港澳臺視角專區</h2>
+                <p class="section-desc">從港澳臺視角理解中國地理，探索兩岸四地地理聯繫</p>
+            </div>
+            <div class="tab-nav" data-tab-group="hktw">
+                <button class="tab-btn active" data-tab="connection">地理聯繫</button>
+                
+                <button class="tab-btn" data-tab="terminology">兩岸名詞對照</button>
+            </div>
+            <div class="tab-content" id="hktwContent">
+                <!-- 地理聯繫 -->
+                <div class="tab-panel active" data-panel="connection">
+                    <div class="connection-grid">
+                        <div class="connection-card">
+                            <div class="connection-icon"><i class="fas fa-bridge"></i></div>
+                            <h4>粵港澳大灣區</h4>
+                            <p>涵蓋廣東九市與港澳兩個特別行政區，總面積約5.6萬平方公里，常住人口超過8600萬。珠江口是連接紐帶，港珠澳大橋跨越伶仃洋，是世界最長的跨海大橋。</p>
+                            <div class="connection-data">
+                                <span><strong>面積：</strong>5.6萬km²</span>
+                                <span><strong>人口：</strong>8600萬+</span>
+                                <span><strong>港口：</strong>世界級港口群</span>
+                            </div>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon"><i class="fas fa-ship"></i></div>
+                            <h4>海峽兩岸地理</h4>
+                            <p>臺灣海峽最窄處約130公里，平均水深約60米。海峽是東海與南海的通道，也是太平洋西側的重要水道。金門、馬祖列島靠近福建沿岸。</p>
+                            <div class="connection-data">
+                                <span><strong>海峽寬度：</strong>130-400km</span>
+                                <span><strong>平均水深：</strong>約60m</span>
+                                <span><strong>金門距廈門：</strong>約10km</span>
+                            </div>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon"><i class="fas fa-mountain"></i></div>
+                            <h4>地形地質淵源</h4>
+                            <p>臺灣島與大陸在地質上同屬歐亞板塊，中央山脈與武夷山脈有地質聯繫。海南島原與雷州半島相連，後因地殼運動分離。港澳地區屬嶺南丘陵延伸。</p>
+                            <div class="connection-data">
+                                <span><strong>板塊：</strong>歐亞板塊</span>
+                                <span><strong>臺灣形成：</strong>板塊擠壓</span>
+                                <span><strong>海南分離：</strong>瓊州海峽</span>
+                            </div>
+                        </div>
+                        <div class="connection-card">
+                            <div class="connection-icon"><i class="fas fa-cloud-rain"></i></div>
+                            <h4>氣候與水文</h4>
+                            <p>港澳臺均受季風影響，屬亞熱帶至熱帶氣候。颱風是共同面臨的天氣現象，珠江與濁水溪分別是港澳和臺灣的重要水源。</p>
+                            <div class="connection-data">
+                                <span><strong>氣候類型：</strong>亞熱帶/熱帶季風</span>
+                                <span><strong>颱風影響：</strong>夏秋頻繁</span>
+                                <span><strong>年降水量：</strong>1500-2500mm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 兩岸名詞對照 -->
+                <div class="tab-panel" data-panel="terminology">
+                    <div class="terminology-search">
+                        <input type="text" id="termSearch" placeholder="搜尋名詞..." oninput="searchTerm(this.value)">
+                    </div>
+                    <div class="terminology-table-wrapper">
+                        <table class="terminology-table" id="terminologyTable">
+                            <thead>
+                                <tr>
+                                    <th>分類</th>
+                                    <th>大陸用法</th>
+                                    <th>臺灣用法</th>
+                                    <th>說明</th>
+                                </tr>
+                            </thead>
+                            <tbody id="terminologyBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-globe-asia"></i>
+                    <span>中國地理學習網</span>
+                </div>
+                <p class="footer-desc">系統化學習中國地理，從自然到人文，從宏觀到微觀</p>
+                <div class="footer-links">
+                    <a href="#chapters">章節精講</a>
+                    <a href="#map-interactive">地圖互動</a>
+                    <a href="#cards">名詞卡片</a>
+                    <a href="#quiz">題庫練習</a>
+                    <a href="#hktw">港澳臺專區</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 中國地理學習網 — 僅供學習使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 章節內容 Modal -->
+    <div class="modal-overlay" id="chapterModal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close" onclick="closeChapterModal()">&times;</button>
+            <div class="modal-header">
+                <h3 id="chapterModalTitle">章節標題</h3>
+            </div>
+            <div class="modal-body" id="chapterModalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- 章節小練習 Modal -->
+    <div class="modal-overlay" id="chapterQuizModal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close" onclick="closeChapterQuizModal()">&times;</button>
+            <div class="modal-header">
+                <h3 id="chapterQuizTitle"><i class="fas fa-pen"></i> 章節小練習</h3>
+            </div>
+            <div class="modal-body" id="chapterQuizBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- 回到頂部 -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        window._AMapSecurityConfig = { securityJsCode: 'd59d2096c41af126c6f153d206fc47fa' };
+    </script>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=377b489255034eb1881201d3790ded64&plugin=AMap.DistrictSearch,AMap.Scale,AMap.ToolBar"></script>
+    <script src="js/app.js"></script>
+    <script src="js/chapters.js"></script>
+    <script src="js/map-interactive.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/hktw.js"></script>
+    
+</body>
+</html>
